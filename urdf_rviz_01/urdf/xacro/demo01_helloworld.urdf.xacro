@@ -1,0 +1,36 @@
+<robot name="my_robot" xmlns:xacro="http://wiki.ros.org/xacro">
+    <!--to define properties -->
+    <xacro:property name = "wheel_radius" value="0.0325"/>
+    <xacro:property name = "wheel_length" value ="0.0015"/>
+    <xacro:property name ="PI" value="3.1415927"/>
+    <xacro:property name="base_link_length" value="0.08"/>
+    <xacro:property name="lida_space" value ="0.015"/>
+
+    <!--function definitions-->
+    <xacro:macro name="wheel_func" params="wheel_name flag">
+        <!--link-->
+        <link name="${wheel_name}_wheel">
+            <visual>
+                <geometry>
+                    <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+                </geometry>
+                <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+                <material name="wheel_color">
+                    <color rgba="0 0 0.3"/>
+                </material>
+            </visual>
+        </link>
+        <!--joint-->
+        <joint name="${wheel_name}2link" type="continuous">
+            <parent link="base_link"/>
+            <child link="${wheel_name}_wheel"/>
+            <origin xyz="0 ${0.1*flag} ${(base_link_length/2 +lida_space-wheel_radius)}"/>
+            <material name="wheel_color">
+                <color rgba="0 0 0 0.3"/>
+            </material>
+        </joint>
+    </xacro:macro>
+    <!--call the function-->
+    <xacro:wheel_func wheel_name="left" flag="1"/>
+    <xacro:wheel_func wheel_name="right" flag="-1"/>
+</robot>

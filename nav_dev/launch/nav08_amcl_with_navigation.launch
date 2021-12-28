@@ -1,0 +1,9 @@
+<launch>
+    <!--pulisher to puslish joints and links-->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/> 
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find nav_dev)/rviz/rviz_config.rviz"/>
+    <include file= "$(find nav_dev)/launch/nav03_map_server.launch"/>
+    <include file="$(find nav_dev)/launch/nav05_movebase.launch"/>
+    <include file= "$(find nav_dev)/launch/nav04_amcl.launch"/>
+</launch>
