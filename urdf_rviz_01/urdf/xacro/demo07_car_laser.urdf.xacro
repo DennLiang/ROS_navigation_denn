@@ -33,7 +33,7 @@
             <geometry>
                 <cylinder radius="${laser_radius}" length="${laser_length}"/>
             </geometry>
-            <material name="red">
+            <material name="wheel_color">
                 <color rgba="0.0 0.0 0.0 0.5"/>
             </material>
         </visual>        

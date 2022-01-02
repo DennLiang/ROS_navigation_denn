@@ -100,7 +100,7 @@
                     <cylinder radius="${support_wheel_radius}" length="${support_wheel_length}"/>
                 </geometry>
                 <origin xyz="0 0 0" rpy="${PI/2} 0 0" />
-                <material name="red" />
+                <material name="wheel_color" />
             </visual>
             <collision>
                 <geometry>

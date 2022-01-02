@@ -13,7 +13,7 @@
                 <box size="${camera_length} ${camera_width} ${camera_height}"/>
             </geometry>
             <origin xyz="0 0 0" rpy="0 0 0"/>
-            <material name="red">
+            <material name="wheel_color">
                 <color rgba="0 0 0 0.5"/>
             </material>
         </visual>
