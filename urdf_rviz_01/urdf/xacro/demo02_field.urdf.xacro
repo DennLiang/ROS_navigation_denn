@@ -1,0 +1,10 @@
+<robot name="my_robot" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:property name="PI" value="3.1415927"/>
+    <xacro:property name="radius" value="0.03"/>
+    <!--use the properties-->
+    <myUserPropertyxxx name="${PI}"/>
+    <myUserPropertyxxx name="${radius}"/>
+    <!--caculation-->
+    <myUserPropertyYyy result="${PI / 2}"/>
+    <myUserPropertyYyy result="${radius / 2}"/>
+</robot>

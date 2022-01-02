@@ -1,0 +1,15 @@
+<launch>
+    <include file="$(find nav_dev)/launch/nav03_map_server.launch"/>
+    <include file="$(find nav_dev)/launch/nav04_amcl.launch"/>
+    <include file="$(find nav_dev)/launch/nav05_movebase.launch"/>
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>   
+    <!-- correct TF of the kinect -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_" args="0 0 0 -1.57 0 -1.57 /laser_support /support_depth"/> 
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find nav_dev)/rviz/rviz_config.rviz"/>
+</launch>
+
+<!-- first: run this : source ./devel/setup.bash -->
+<!-- second: run this : roslaunch urdf_gazebo_02 demo02_car.launch-->
+<!-- third: open a new window , then input : source ./devel/setup.bash -->
+<!-- fourth run this :  roslaunch nav_dev nav06_test.launch -->

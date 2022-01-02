@@ -1,0 +1,52 @@
+global_costmap: #http://wiki.ros.org/costmap_2d 
+  robot_radius: 0.12 
+  # footprint: [[-0.12, -0.12], [-0.12, 0.12], [0.12, 0.12], [0.12, -0.12]] 
+  #coordinate frame and tf params
+  map_type: costmap
+  global_frame: map #odom 
+  robot_base_frame: base_footprint #机器人坐标系
+  transform_tolerance: 0.5 #等待坐标变换发布信息的超时时间
+
+  #rate params
+  update_frequency: 3.0 #代价地图更新频率
+  publish_frequency: 3.0 #代价地图的发布频率
+  rolling_window: false #If the static_map parameter is set to true, this parameter must be set to false
+  always_send_full_costmap: false
+
+
+
+  plugins:
+    - {name: static_layer, type: "costmap_2d::StaticLayer"}
+    - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer"}
+    - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+
+  static_layer: #http://wiki.ros.org/costmap_2d/hydro/staticmap
+    map_topic: "map"
+    first_map_only: false
+    subscribe_to_updates: false
+    track_unknown_space: true 
+    use_maximum: false #Only matters if the static layer is not the bottom layer. If true, only the maximum value will be written to the master costmap.
+    trinary_costmap: true 
+
+  obstacle_layer:  #http://wiki.ros.org/costmap_2d/hydro/obstacles
+    track_unknown_space: false
+    footprint_clearing_enabled: true
+    combination_method: 1
+    observation_sources: scan
+    scan: 
+      topic: /scan
+      sensor_frame: laser
+      observation_persistence: 0.0
+      expected_update_rate: 0.0
+      data_type: LaserScan
+      marking: true
+      clearing: true
+      max_obstacle_height: 2.0
+      min_obstacle_height: 0.0
+      obstacle_range: 3.0 # 用于障碍物探测，比如: 值为 3.0，意味着检测到距离小于 3 米的障碍物时，就会引入代价地图
+      raytrace_range: 3.5 # 用于清除障碍物，比如：值为 3.5，意味着清除代价地图中 3.5 米以外的障碍物
+      inf_is_valid: true
+
+  inflation_layer: #http://wiki.ros.org/costmap_2d/hydro/inflation
+    inflation_radius: 0.15
+    cost_scaling_factor: 3.0

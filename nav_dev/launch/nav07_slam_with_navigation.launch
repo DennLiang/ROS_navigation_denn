@@ -1,0 +1,10 @@
+<!-- put slam and navigation together -->
+<launch>
+    <include file="$(find nav_dev)/launch/nav01_slam.launch"/>
+    <include file="$(find nav_dev)/launch/nav05_movebase.launch"/>
+</launch>
+
+<!-- first: run this : source ./devel/setup.bash -->
+<!-- second: run this : roslaunch urdf_gazebo_02 demo02_car.launch-->
+<!-- third: open a new window , then input : source ./devel/setup.bash -->
+<!-- fourth run this : roslaunch nav_dev nav07_slam_with_navigation.launch -->

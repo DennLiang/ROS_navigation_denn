@@ -1,0 +1,4 @@
+<launch>
+    <arg name="filename" value="$(find nav_dev)/map/cliff4.yaml"/>
+    <node pkg="map_server" type="map_server" name="map_server" args="$(arg filename)"/>
+</launch>

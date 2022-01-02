@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/rosnoetic/demo05/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/amcl/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/base_local_planner/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/carrot_planner/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/clear_costmap_recovery/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/costmap_2d/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/dwa_local_planner/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/global_planner/include/**",
+        "/home/rosnoetic/demo01_workspace/src/helloworld/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/map_server/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/move_base/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/move_slow_and_clear/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/nav_core/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/navfn/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/rotate_recovery/include/**",
+        "/home/rosnoetic/demo05/src/geometry2-noetic-devel/tf2/include/**",
+        "/home/rosnoetic/demo05/src/geometry2-noetic-devel/tf2_bullet/include/**",
+        "/home/rosnoetic/demo05/src/geometry2-noetic-devel/tf2_eigen/include/**",
+        "/home/rosnoetic/demo05/src/geometry2-noetic-devel/tf2_geometry_msgs/include/**",
+        "/home/rosnoetic/demo05/src/geometry2-noetic-devel/tf2_kdl/include/**",
+        "/home/rosnoetic/demo05/src/geometry2-noetic-devel/tf2_msgs/include/**",
+        "/home/rosnoetic/demo05/src/geometry2-noetic-devel/tf2_ros/include/**",
+        "/home/rosnoetic/demo05/src/geometry2-noetic-devel/tf2_sensor_msgs/include/**",
+        "/home/rosnoetic/demo05/src/navigation-noetic-devel/voxel_grid/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
