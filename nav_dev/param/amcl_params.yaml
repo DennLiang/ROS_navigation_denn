@@ -33,7 +33,7 @@ resample_interval: 1
 restore_defaults: false
 save_pose_rate: 0.5
 tf_broadcast: true
-transform_tolerance: 1.0
+transform_tolerance: 0.5
 update_min_a: 0.5
 update_min_d: 0.2
 use_map_topic: false
